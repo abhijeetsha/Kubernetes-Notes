@@ -12,3 +12,11 @@
 * Rolling updates — deploy new versions without downtime
 * Service discovery — assigns IPs and DNS names to containers
 
+## 🧱 Kubernetes Architecture (in short)
+### Ans: Components
+* Master Node (Control Plane)	>>>>>>>>>Manages the cluster (scheduling, monitoring, etc.)
+* Worker Nodes	>>>>>>>>>Run your applications (containers/pods)
+* Pod	>>>>>>>>>The smallest deployable unit in Kubernetes (contains 1 or more containers)
+* Service	>>>>>>>>>>Exposes pods to the network or internally
+* Deployment	>>>>>>>>>Ensures your app runs in the desired number of pods
+* Namespace	>>>>>>>>>>>Used to organize resources within the cluster
