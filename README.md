@@ -95,5 +95,12 @@
 * kubectl logs <pod-name>	-----View pod logs
 * kubectl delete pod <pod-name>	-----Delete a pod
 
-
+## 🧱 What is Pod...?
+### Ans: 
+* The smallest deployable unit in Kubernetes.
+* A Pod contains one or more containers that share:
+    * The same network IP
+    * Storage
+    * Configuration
+* Think of a pod as a “wrapper” around your container(s).
 
