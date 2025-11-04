@@ -52,6 +52,10 @@
 #### Check cluster status
 * kubectl get nodes
 
+🔹 Kind (Kubernetes in Docker)
+* kind create cluster
+* kubectl cluster-info
+
 
 
 
