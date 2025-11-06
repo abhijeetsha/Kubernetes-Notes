@@ -1,5 +1,5 @@
 # Kubernetes In One-Shots Explanations:-
-## 🔹 Core Concepts:-
+# 🔹 Core Concepts Of Kubernetes:-
 
 ## 🧱 1. Monolithic vs Microservices
 ### 🧩 Monolithic Architecture
