@@ -70,3 +70,14 @@
 * Uses cron syntax (*/5 * * * *) for scheduling.
 * Each run creates a Job, which in turn creates Pods.
 * 🔹 Use Case: Regular backups, data cleanup, scheduled notifications, etc.
+
+## 📊 Summary Comparison Table:
+| Workload        | Type         | Pods Managed       | Restart Behavior  | Use Case                                  |
+| --------------- | ------------ | ------------------ | ----------------- | ----------------------------------------- |
+| **Deployment**  | Stateless    | Multiple           | Auto-recreate     | Web servers, APIs                         |
+| **StatefulSet** | Stateful     | Multiple (ordered) | Auto-recreate     | Databases                                 |
+| **DaemonSet**   | System-level | One per Node       | Auto-recreate     | Monitoring/logging                        |
+| **ReplicaSet**  | Stateless    | Multiple           | Auto-recreate     | Basic pod management (used by Deployment) |
+| **Job**         | One-time     | One or more        | Run to completion | Batch jobs                                |
+| **CronJob**     | Scheduled    | One or more        | Run per schedule  | Backups, maintenance                      |
+
