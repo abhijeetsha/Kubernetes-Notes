@@ -95,7 +95,7 @@
 * kubectl logs <pod-name>	-----View pod logs
 * kubectl delete pod <pod-name>	-----Delete a pod
 
-## 🧱 What is Pod...?
+## 🧱 What is Pods...?
 ### Ans: 
 * The smallest deployable unit in Kubernetes.
 * A Pod contains one or more containers that share:
@@ -104,3 +104,22 @@
     * Configuration
 * Think of a pod as a “wrapper” around your container(s).
 
+## 🗂️ What is Namespaces...?
+### Ans:
+* Used to logically separate resources in a cluster.
+* Example: dev, test, and prod namespaces to isolate environments.
+### Commands Is:-
+* kubectl create namespace dev
+* kubectl get namespaces
+* kubectl get pods -n dev
+
+## What is Labels And Selectors....?
+### Ans: 
+* Labels: Key-value pairs assigned to objects (used for grouping/filtering).
+* Selectors: Query/filter resources using labels.
+
+## 📝 What is Annotations...?
+### Ans:
+* Store non-identifying metadata for resources (like build info, version, or notes).
+* Not used for selection.
+* 
