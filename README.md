@@ -117,9 +117,23 @@
 ### Ans: 
 * Labels: Key-value pairs assigned to objects (used for grouping/filtering).
 * Selectors: Query/filter resources using labels.
+### 🔹 Example Of Labrls:-
+* metadata:
+  * labels:
+    * app: frontend
+
+### 🔹 Example Of Selector:-
+* selector:
+  * matchLabels:
+    * app: frontend
 
 ## 📝 What is Annotations...?
 ### Ans:
 * Store non-identifying metadata for resources (like build info, version, or notes).
 * Not used for selection.
-* 
+### 🔹 Example of Annotations
+* metadata:
+  * annotations:
+    * buildVersion: "v1.0"
+    * maintainer: "team@company.com"
+
