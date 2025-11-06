@@ -81,3 +81,12 @@
 | **Job**         | One-time     | One or more        | Run to completion | Batch jobs                                |
 | **CronJob**     | Scheduled    | One or more        | Run per schedule  | Backups, maintenance                      |
 
+## 🧠 Quick Recap:
+### Learn This Things:-
+* Deployment → Stateless apps with scaling & updates.
+* StatefulSet → Stateful apps with stable identity.
+* DaemonSet → One pod per node (system-level tasks).
+* ReplicaSet → Basic controller for identical pods (used by Deployments).
+* Job → Run once and complete.
+* CronJob → Run periodically by schedule.
+
