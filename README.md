@@ -200,7 +200,7 @@
 * Good for one-time batch jobs or short-lived scripts.
 * 🔹 Use Case: Data backup, file processing, batch tasks, migration scripts.
 
-### ⏰ 6. CronJob
+### ⏰ 6. CronJob Workloads
 ## 📘 Purpose:
 * Runs Jobs on a schedule, like a Linux cron job.
 * Example: “Run a backup every day at midnight.”
