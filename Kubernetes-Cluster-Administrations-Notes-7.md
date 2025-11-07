@@ -109,4 +109,70 @@
 ### Verify upgrade.
   * kubectl get nodes
 
- 
+## 🔒 Best Practices for Cluster Upgrade
+### Upgrade one version at a time (e.g., v1.28 → v1.29 → v1.30).
+ * Drain nodes before upgrading:
+ * kubectl drain <node> --ignore-daemonsets
+### Uncordon after upgrade:
+ * kubectl uncordon <node>
+ * Test workloads post-upgrade.
+
+## 🧱 3. Custom Resource Definitions (CRDs)
+### Kubernetes allows you to extend the API by creating Custom Resources (CRs).
+🔹 What is a CRD?
+* Custom Resource Definition (CRD): Defines a new resource type in Kubernetes.
+* Custom Resource (CR): An instance of that type.
+* Used by Operators, Custom Controllers, or teams who need domain-specific APIs.
+
+## 🧩 Example: Creating a CRD
+### CRD Definition:
+* apiVersion: apiextensions.k8s.io/v1
+* kind: CustomResourceDefinition
+* metadata:
+  * name: databases.myorg.com
+* spec:
+  * group: myorg.com
+  * versions:
+    * - name: v1
+      * served: true
+      * storage: true
+      * schema:
+        * openAPIV3Schema:
+          * type: object
+          * properties:
+            * spec:
+              * type: object
+              * properties:
+                * dbname:
+                  * type: string
+                * replicas:
+                  * type: integer
+  * scope: Namespaced
+  * names:
+    * plural: databases
+    * singular: database
+    * kind: Database
+    * shortNames:
+    * - db
+
+## After applying this:
+### kubectl apply -f database-crd.yaml
+### Kubernetes now recognizes a new kind: Database
+* Create a Custom Resource:
+* apiVersion: myorg.com/v1
+* kind: Database
+* metadata:
+  * name: mydb
+* spec:
+  * dbname: "customers"
+  * replicas: 3
+### Commands:
+* kubectl apply -f mydb.yaml
+* kubectl get databases
+
+## ⚙️ CRDs Use Cases
+* Extend Kubernetes to manage new services (e.g., Databases, ML jobs, etc.)
+* Used by Operators like:
+   * Prometheus Operator (Prometheus, Alertmanager)
+   * Istio Operator
+   * ArgoCD Custom Resources
