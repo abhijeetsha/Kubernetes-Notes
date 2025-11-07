@@ -58,8 +58,8 @@
 | **Repository** | Location where charts are stored (e.g., ArtifactHub, Bitnami) |
 
 ## 🧩 Example Helm Chart Structure
-mychart/
- ├── Chart.yaml        # Chart metadata
- ├── values.yaml       # Configuration values
- ├── templates/        # YAML templates for K8s objects
- └── charts/           # Dependencies
+* mychart/
+ * ├── Chart.yaml ----> # Chart metadata
+ * ├── values.yaml  ----> # Configuration values
+ * ├── templates/  ----> # YAML templates for K8s objects
+ * └── charts/     -----> # Dependencies
