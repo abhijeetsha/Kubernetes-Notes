@@ -176,3 +176,11 @@
    * Prometheus Operator (Prometheus, Alertmanager)
    * Istio Operator
    * ArgoCD Custom Resources
+
+## 🧠 Summary Table
+| Concept             | Description                                      | Scope/Use                    |
+| ------------------- | ------------------------------------------------ | ---------------------------- |
+| **RBAC**            | Controls access and permissions in cluster       | User, Group, SA              |
+| **Cluster Upgrade** | Process of updating Kubernetes version           | Control plane & worker nodes |
+| **CRD**             | Custom API extension defining new resource types | Extend K8s functionality     |
+
