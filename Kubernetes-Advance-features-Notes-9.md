@@ -63,3 +63,11 @@
  * ├── values.yaml  ----> # Configuration values
  * ├── templates/  ----> # YAML templates for K8s objects
  * └── charts/     -----> # Dependencies
+
+## ✅ Benefits of Helm:
+### Benifits:
+* Simplifies app deployment.
+* Handles versioning and rollback.
+* Supports templating and configuration reuse.
+* Integrates with CI/CD (e.g., Jenkins, ArgoCD).
+
