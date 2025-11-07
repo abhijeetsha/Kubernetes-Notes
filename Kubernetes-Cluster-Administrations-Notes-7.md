@@ -77,4 +77,36 @@
 ### ✅ Check Current Permissions
 * kubectl auth can-i get pods --namespace=dev
 
+## 🔁 2. Cluster Upgrade:
+### Upgrading ensures your cluster runs the latest stable Kubernetes version, fixing bugs and adding new features.
 
+## ⚙️ Upgrade Process Overview
+### 1. Check current version:
+* kubectl version
+
+### 2. Plan upgrade
+* Backup etcd
+* Review Kubernetes release notes
+* Verify compatibility (API versions, plugins, CNI, CSI)
+
+### 3. Upgrade Control Plane.
+* If using kubeadm, upgrade step-by-step:
+  * apt update && apt install -y kubeadm=<version>
+  * kubeadm upgrade plan
+  * kubeadm upgrade apply v1.30.0
+
+### 4. Upgrade kubelet & kubectl on control plane node.
+* Commands:-
+  * apt install -y kubelet=<version> kubectl=<version>
+  * systemctl daemon-reload
+  * systemctl restart kubelet
+
+### 5. Upgrade Worker Nodes.
+  * kubeadm upgrade node
+  * apt install -y kubelet=<version>
+  * systemctl restart kubelet
+
+### Verify upgrade.
+  * kubectl get nodes
+
+ 
