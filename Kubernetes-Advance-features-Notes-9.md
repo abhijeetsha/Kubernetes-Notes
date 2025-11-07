@@ -71,3 +71,67 @@
 * Supports templating and configuration reuse.
 * Integrates with CI/CD (e.g., Jenkins, ArgoCD).
 
+## 🌐 4. Service Mesh
+🔹 What is a Service Mesh?
+  * A Service Mesh is a dedicated infrastructure layer that manages service-to-service communication within your cluster.
+  * It adds:
+  * Traffic management
+  * Security (mTLS)
+  * Observability
+  * Resilience (retries, circuit-breaking)
+### without changing your application code.
+
+## ⚙️ How It Works
+* A Service Mesh uses sidecar proxies (like Envoy) attached to each Pod.
+* These proxies intercept and manage all network traffic.
+
+## 🧱 Popular Service Mesh Tools
+| Tool                                       | Description                                                           |
+| ------------------------------------------ | --------------------------------------------------------------------- |
+| **Istio**                                  | Full-featured service mesh with mTLS, traffic control, and monitoring |
+| **Linkerd**                                | Lightweight and simpler mesh for performance                          |
+| **Consul Connect**                         | HashiCorp’s mesh with service discovery and zero-trust networking     |
+| **AWS App Mesh / Open Service Mesh (OSM)** | Cloud-native managed meshes                                           |
+
+### 🧩 Istio Example Features
+* Traffic Control: Route based on headers, weights, etc.
+* Security: Encrypted traffic via mutual TLS.
+* Observability: Tracing (Jaeger), metrics (Prometheus), logs.
+* Policy Enforcement: RBAC and quotas per service.
+
+## 🔑 5. Kubernetes API
+### 🔹 What is Kubernetes API?
+### The Kubernetes API is the core interface for communication between:
+  * kubectl
+  * Controllers
+  * Schedulers
+  * Operators
+  * Any external tools
+### Everything in Kubernetes is API-driven (Pods, Deployments, Nodes, etc.).
+
+## 🧠 Kubernetes API Components
+| Component                         | Description                                                |
+| --------------------------------- | ---------------------------------------------------------- |
+| **API Server (`kube-apiserver`)** | Central access point for all requests                      |
+| **API Objects**                   | Declarative representations of cluster resources           |
+| **API Groups & Versions**         | Organize resources logically (e.g., `apps/v1`, `batch/v1`) |
+
+## 🧩 Example API Request
+* To List All Pods.
+* kubectl get pods -o json
+* Under the hood, this calls:
+* GET https://<api-server>/api/v1/namespaces/default/pods
+
+## ⚙️ Custom APIs
+### You can extend the API using:
+   * CRDs (Custom Resource Definitions)
+   * API Aggregation Layer
+### This allows your own custom resource types to behave like native Kubernetes resources.
+
+## 🧮 Summary Table
+| Concept            | Description                                      | Example Tools                         |
+| ------------------ | ------------------------------------------------ | ------------------------------------- |
+| **Operator**       | Automates complex app lifecycle via CRDs         | Prometheus Operator, MongoDB Operator |
+| **Helm**           | Package manager for deploying applications       | Helm 3, Bitnami Charts                |
+| **Service Mesh**   | Manages secure, observable service communication | Istio, Linkerd, Consul                |
+| **Kubernetes API** | Core programmable interface for all components   | kube-apiserver                        |
