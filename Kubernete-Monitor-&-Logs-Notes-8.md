@@ -34,3 +34,60 @@
 ### ✅ Verify Installation
 * kubectl get deployment metrics-server -n kube-system
 
+##@ 🔍 View Metrics
+* kubectl top nodes
+* kubectl top pods
+* Example Output:
+* NAME        CPU(cores)   MEMORY(bytes)
+* node1       200m         800Mi
+
+## 🪵 4. Logging in Kubernetes
+* Logs are text output from applications, system components, and containers.
+* Kubernetes itself doesn’t manage log storage — you must configure a logging pipeline.
+
+## 🔹 Types of Logs
+| Source               | Example                                        |
+| -------------------- | ---------------------------------------------- |
+| **Application Logs** | `stdout` and `stderr` from containers          |
+| **System Logs**      | Logs from `kubelet`, `container runtime`, etc. |
+| **Audit Logs**       | Security-related events (API access, changes)  |
+
+## 🔹 Access Logs
+* View container logs:---> kubectl logs <pod-name>
+* If multiple containers in one Pod:----> kubectl logs <pod-name> -c <container-name>
+
+## 🔹 Centralized Logging
+### To manage logs across many Pods and Nodes, use a logging stack:
+
+## 🧱 Common Logging Stack:
+* EFK Stack (Elasticsearch + Fluentd + Kibana)
+| Component         | Function                     |
+| ----------------- | ---------------------------- |
+| **Fluentd**       | Collects & forwards logs     |
+| **Elasticsearch** | Stores and indexes logs      |
+| **Kibana**        | Visualizes and searches logs |
+* Alternative: Loki + Promtail + Grafana (lightweight and efficient).
+
+## 📈 5. Monitoring & Logging Tools.
+* Let’s look at the most popular and widely used tools:-
+
+## 🧠 Monitoring Tools:-
+| Tool                    | Description                                       | Usage                             |
+| ----------------------- | ------------------------------------------------- | --------------------------------- |
+| **Metrics Server**      | Resource metrics (CPU, memory) for short-term use | Built-in, lightweight             |
+| **Prometheus**          | Open-source monitoring & alerting toolkit         | Collects metrics using pull model |
+| **Grafana**             | Visualization & dashboard tool                    | Works with Prometheus, Loki, etc. |
+| **Kube-state-metrics**  | Exposes cluster state metrics                     | Used by Prometheus                |
+| **cAdvisor**            | Provides container-level metrics to kubelet       | Node-level monitoring             |
+| **Datadog / New Relic** | SaaS-based monitoring tools                       | Commercial, full-stack visibility |
+
+## 🪵 Logging Tools
+| Tool                                                      | Description                                   | Key Feature                       |
+| --------------------------------------------------------- | --------------------------------------------- | --------------------------------- |
+| **Fluentd / Fluent Bit**                                  | Log collectors and forwarders                 | Collect logs to external storage  |
+| **Elasticsearch**                                         | Stores and indexes logs                       | Part of EFK Stack                 |
+| **Kibana**                                                | Visualizes Elasticsearch data                 | Log dashboards and searches       |
+| **Loki**                                                  | Lightweight log aggregation system by Grafana | Works with Promtail               |
+| **Promtail**                                              | Collects logs for Loki                        | Kubernetes-native                 |
+| **Cloud Logging (e.g., AWS CloudWatch, GCP Stackdriver)** | Cloud-managed log storage                     | Easy integration with managed K8s |
+
