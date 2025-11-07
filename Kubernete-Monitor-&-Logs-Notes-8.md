@@ -60,13 +60,13 @@
 ### To manage logs across many Pods and Nodes, use a logging stack:
 
 ## 🧱 Common Logging Stack:
-* EFK Stack (Elasticsearch + Fluentd + Kibana)
+### EFK Stack (Elasticsearch + Fluentd + Kibana)
 | Component         | Function                     |
 | ----------------- | ---------------------------- |
 | **Fluentd**       | Collects & forwards logs     |
 | **Elasticsearch** | Stores and indexes logs      |
 | **Kibana**        | Visualizes and searches logs |
-* Alternative: Loki + Promtail + Grafana (lightweight and efficient).
+### Alternative: Loki + Promtail + Grafana (lightweight and efficient).
 
 ## 📈 5. Monitoring & Logging Tools.
 * Let’s look at the most popular and widely used tools:-
