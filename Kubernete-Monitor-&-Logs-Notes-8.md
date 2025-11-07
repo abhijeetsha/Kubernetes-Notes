@@ -91,3 +91,25 @@
 | **Promtail**                                              | Collects logs for Loki                        | Kubernetes-native                 |
 | **Cloud Logging (e.g., AWS CloudWatch, GCP Stackdriver)** | Cloud-managed log storage                     | Easy integration with managed K8s |
 
+## 🔔 6. Alerting and Visualization
+### Monitoring isn’t just collecting data — it’s also about acting on issues.
+  * Prometheus Alertmanager — sends alerts (Email, Slack, PagerDuty).
+  * Grafana — builds dashboards for visualization.
+  * Kubernetes Dashboard — visual UI for basic cluster status.
+
+## 🧠 7. Summary Table
+| Component              | Purpose                         | Example Tools              |
+| ---------------------- | ------------------------------- | -------------------------- |
+| **Metrics Collection** | Gather performance metrics      | Metrics Server, Prometheus |
+| **Logging**            | Collect, store, and search logs | Fluentd, Loki, EFK Stack   |
+| **Visualization**      | Dashboard and charts            | Grafana, Kibana            |
+| **Alerting**           | Notify on issues                | Alertmanager               |
+| **Cluster Insight**    | Node/Pod resource usage         | kubectl top, Lens, K9s     |
+
+## 🔍 Simple Example Flow
+### 1. Metrics Server collects Pod/Node metrics → used by HPA
+### 2. Prometheus scrapes metrics from apps (via /metrics endpoint)
+### 3. Grafana visualizes the Prometheus data
+### 4. Fluentd collects logs → sends to Elasticsearch
+### 5. Kibana visualizes and searches logs
+### 6. Alertmanager notifies if thresholds exceed (e.g., CPU > 90%)
